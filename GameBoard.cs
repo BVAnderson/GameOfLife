@@ -33,7 +33,7 @@ namespace GameOfLife
             {
                 for (int j = 0; j < boardSize; j++)
                 {
-                    boardString.Append(Board[i, j].ToString());
+                    boardString.Append(Board[i, j] == 0 ? "." : "X");
                 }
                 boardString.AppendLine();
             }

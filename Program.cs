@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace GameOfLife
 {
@@ -12,7 +13,7 @@ namespace GameOfLife
             GameBoard tempBoard = new GameBoard();
             gameBoard.SetIntitialShape();
             Console.WriteLine(gameBoard);
-            Console.ReadLine();
+            //Console.ReadLine();
             bool inPlay = true;
             
             while (inPlay == true)
@@ -30,7 +31,8 @@ namespace GameOfLife
                 gameBoard.Board = (int[,])tempBoard.Board.Clone();
                 Console.Clear();
                 Console.WriteLine(gameBoard);
-                Console.ReadLine();
+                Thread.Sleep(30);
+                //Console.ReadLine();
                 if (alive == false)
                 {
                     Console.WriteLine("everything is dead. Hit any key to start over");
